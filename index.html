@@ -83,15 +83,15 @@
 
         <!-- مشغل الفيديو -->
         <div class="player-container">
-            <iframe id="videoPlayer" src="" allowfullscreen></iframe>
+            <iframe id="videoPlayer" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
         </div>
 
-        <!-- قائمة تبديل السيرفرات -->
+        <!-- قائمة تبديل السيرفرات المحدثة -->
         <div class="servers-menu">
-            <button class="server-btn active" onclick="changeServer('https://vidsrc.cc/v2/embed/movie/tt_odyssey_placeholder?server=1', this)">سيرفر 1 (رئيسي)</button>
-            <button class="server-btn" onclick="changeServer('https://vidsrc.cc/v2/embed/movie/tt_odyssey_placeholder?server=2', this)">سيرفر 2 (1080p)</button>
-            <button class="server-btn" onclick="changeServer('https://vidsrc.cc/v2/embed/movie/tt_odyssey_placeholder?server=3', this)">سيرفر 3 (بديل سريع)</button>
-            <button class="server-btn" onclick="changeServer('https://vidsrc.cc/v2/embed/movie/tt_odyssey_placeholder?server=VIP', this)">سيرفر VIP (جودة عالية)</button>
+            <button class="server-btn active" onclick="changeServer('https://vidsrc.xyz/embed/movie/tt10872600', this)">سيرفر 1 (رئيسي)</button>
+            <button class="server-btn" onclick="changeServer('https://vidsrc.cc/v2/embed/movie/tt10872600', this)">سيرفر 2 (1080p)</button>
+            <button class="server-btn" onclick="changeServer('https://player.vidsrc.xyz/embed/movie/tt10872600', this)">سيرفر 3 (بديل سريع)</button>
+            <button class="server-btn" onclick="changeServer('https://vidsrc.me/embed/movie?imdb=tt10872600', this)">سيرفر VIP (جودة عالية)</button>
         </div>
 
         <div class="synopsis">
@@ -112,7 +112,7 @@
 
         // تشغيل السيرفر الأول تلقائياً عند فتح الصفحة
         window.onload = function() {
-            document.getElementById('videoPlayer').src = 'https://vidsrc.cc/v2/embed/movie/tt_odyssey_placeholder?server=1';
+            document.getElementById('videoPlayer').src = 'https://vidsrc.xyz/embed/movie/tt10872600';
         };
     </script>
 
