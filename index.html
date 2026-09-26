@@ -253,8 +253,8 @@
             const mediaId = item.id;
             const type = (item.media_type === 'tv' || currentCategory === 'tv' || currentCategory === 'anime') ? 'tv' : 'movie';
             
-            // استخدام رابط البديل السريع والآمن
-            document.getElementById('videoIframe').src = `https://embed.su/embed/${type}/${mediaId}`;
+            // استخدام رابط vidsrc.cc الآمن والبديل
+            document.getElementById('videoIframe').src = `https://vidsrc.cc/v2/embed/${type}/${mediaId}`;
 
             updateMyListButtonText();
             modal.style.display = 'flex';
@@ -299,7 +299,7 @@
             currentCategory = category;
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             if(btn) btn.classList.add('active');
-            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInput').value, '';
             fetchMedia();
         }
 
