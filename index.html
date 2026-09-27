@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.hawk - Global Streaming Platform</title>
+    <title>M.hawk - Ultimate Entertainment Platform</title>
     <style>
         :root {
             --bg-color: #141414;
             --primary-color: #e50914;
             --text-color: #ffffff;
-            --gray-color: #808080;
+            --gray-color: #b3b3b3;
             --card-bg: #1f1f1f;
         }
         body {
@@ -89,7 +89,7 @@
         .hero p {
             font-size: 15px;
             max-width: 550px;
-            color: #b3b3b3;
+            color: var(--gray-color);
             margin-bottom: 20px;
             line-height: 1.5;
         }
@@ -121,12 +121,12 @@
         }
         .movies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
         .movie-card {
             background: var(--card-bg);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
@@ -137,11 +137,11 @@
         }
         .movie-poster {
             width: 100%;
-            height: 240px;
+            height: 260px;
             object-fit: cover;
         }
         .movie-info {
-            padding: 10px;
+            padding: 12px;
         }
         .movie-title {
             font-size: 14px;
@@ -151,7 +151,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .movie-year {
+        .movie-details {
+            display: flex;
+            justify-content: space-between;
             font-size: 12px;
             color: var(--gray-color);
             margin: 0;
@@ -171,7 +173,7 @@
             <li><a href="#">الإصدارات الجديدة</a></li>
         </ul>
         <div class="header-controls">
-            <!-- قائمة اختيار 14 لغة عالمية -->
+            <!-- قائمة الـ 14 لغة -->
             <select class="language-select">
                 <option value="ar">العربية (Arabic)</option>
                 <option value="en">English (الإنجليزية)</option>
@@ -193,62 +195,53 @@
 
     <!-- واجهة البطل الرئيسية -->
     <div class="hero">
-        <h1>The Odyssey</h1>
-        <p>رحلة ملحمية مذهلة مليئة بالمغامرات والأساطير للعودة إلى الديار ومواجهة الصعاب.</p>
+        <h1>The Love Hypothesis</h1>
+        <p>دراما رومانسية واعدة تحكي قصة معقدة مليئة بالمشاعر والمفاجآت غير المتوقعة.</p>
         <button class="hero-btn">مشاهدة الآن</button>
     </div>
 
-    <!-- قسم الإصدارات الجديدة -->
+    <!-- قسم الأفلام والعروض الرائجة -->
     <div class="section-container">
-        <div class="section-title">الأفلام الجديدة</div>
+        <div class="section-title">Trending Movies & Shows</div>
         <div class="movies-grid">
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80" alt="movie" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80" alt="The Love Hypothesis" class="movie-poster">
                 <div class="movie-info">
-                    <div class="movie-title">The Odyssey</div>
-                    <div class="movie-year">2026 • ⭐ 8.0</div>
+                    <div class="movie-title">The Love Hypothesis</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 9.0</span>
+                    </div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80" alt="movie" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80" alt="One Last Shot" class="movie-poster">
                 <div class="movie-info">
-                    <div class="movie-title">Cyber City</div>
-                    <div class="movie-year">2026 • ⭐ 7.6</div>
+                    <div class="movie-title">One Last Shot</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 7.7</span>
+                    </div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="movie" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Resident Evil" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Resident Evil</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 7.3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80" alt="Dark Horizon" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">Dark Horizon</div>
-                    <div class="movie-year">2026 • ⭐ 8.2</div>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80" alt="movie" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-title">The Last Run</div>
-                    <div class="movie-year">2026 • ⭐ 7.9</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- قسم الأنمي -->
-    <div class="section-container">
-        <div class="section-title">أنمي مميز</div>
-        <div class="movies-grid">
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="anime" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-title">Shadow Hunter</div>
-                    <div class="movie-year">2026 • ⭐ 9.1</div>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="anime" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-title">Blade Runner Zero</div>
-                    <div class="movie-year">2025 • ⭐ 8.8</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 8.2</span>
+                    </div>
                 </div>
             </div>
         </div>
