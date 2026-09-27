@@ -19,7 +19,6 @@
             margin: 0;
             padding: 0;
         }
-        /* شريط التنقل العلوي */
         header {
             display: flex;
             justify-content: space-between;
@@ -61,7 +60,6 @@
             align-items: center;
             gap: 15px;
         }
-        /* قائمة الـ 14 لغة */
         .language-select {
             background-color: #222;
             color: #fff;
@@ -71,7 +69,6 @@
             cursor: pointer;
             font-size: 14px;
         }
-        /* واجهة البطل الرئيسية */
         .hero {
             height: 65vh;
             background: linear-gradient(to top, var(--bg-color), transparent), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
@@ -108,7 +105,6 @@
         .hero-btn:hover {
             background-color: #b20710;
         }
-        /* أقسام المحتوى */
         .section-container {
             padding: 20px 40px;
         }
@@ -116,8 +112,7 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
-            border-right: 4px solid var(--primary-color);
-            padding-right: 10px;
+            color: #fff;
         }
         .movies-grid {
             display: grid;
@@ -162,7 +157,6 @@
 </head>
 <body>
 
-    <!-- شريط التنقل العلوي -->
     <header>
         <div class="logo">M.HAWK</div>
         <ul class="nav-links">
@@ -173,7 +167,6 @@
             <li><a href="#">الإصدارات الجديدة</a></li>
         </ul>
         <div class="header-controls">
-            <!-- قائمة الـ 14 لغة -->
             <select class="language-select">
                 <option value="ar">العربية (Arabic)</option>
                 <option value="en">English (الإنجليزية)</option>
@@ -193,14 +186,12 @@
         </div>
     </header>
 
-    <!-- واجهة البطل الرئيسية -->
     <div class="hero">
         <h1>The Love Hypothesis</h1>
         <p>دراما رومانسية واعدة تحكي قصة معقدة مليئة بالمشاعر والمفاجآت غير المتوقعة.</p>
         <button class="hero-btn">مشاهدة الآن</button>
     </div>
 
-    <!-- قسم الأفلام والعروض الرائجة -->
     <div class="section-container">
         <div class="section-title">Trending Movies & Shows</div>
         <div class="movies-grid">
