@@ -70,9 +70,6 @@
             font-size: 14px;
             outline: none;
         }
-        .language-select:hover {
-            border-color: var(--primary-color);
-        }
         .vip-btn {
             background-color: #0070ba;
             color: white;
@@ -180,7 +177,7 @@
 </head>
 <body>
 
-    <!-- شريط التنقل العلوي المتكامل -->
+    <!-- شريط التنقل العلوي -->
     <header>
         <div class="logo">M.HAWK</div>
         <ul class="nav-links">
@@ -191,7 +188,6 @@
             <li><a href="#">الإصدارات الجديدة</a></li>
         </ul>
         <div class="header-controls">
-            <!-- شريط الـ 14 لغة -->
             <select class="language-select" id="languageSelect" onchange="changeLanguage()">
                 <option value="ar">العربية (Arabic)</option>
                 <option value="en">English (الإنجليزية)</option>
@@ -208,14 +204,13 @@
                 <option value="hi">हिन्दी (الهندية)</option>
                 <option value="nl">Nederlands (الهولندية)</option>
             </select>
-            <!-- زر باي بال VIP -->
             <button class="vip-btn" onclick="alert('الانتقال إلى بوابة الدفع عبر PayPal')">
                 <span>PayPal VIP</span>
             </button>
         </div>
     </header>
 
-    <!-- واجهة البطل الرئيسية -->
+    <!-- الواجهة الرئيسية -->
     <div class="hero">
         <h1>The Love Hypothesis</h1>
         <p>دراما رومانسية واعدة تحكي قصة معقدة مليئة بالمشاعر والمفاجآت غير المتوقعة.</p>
@@ -224,46 +219,55 @@
 
     <!-- قسم الأفلام الرائجة -->
     <div class="section-container">
-        <div class="section-title">Trending Movies & Shows</div>
+        <div class="section-title">Trending Movies (أفلام رائجة)</div>
         <div class="movies-grid">
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80" alt="The Love Hypothesis" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80" alt="Movie" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">The Love Hypothesis</div>
-                    <div class="movie-details">
-                        <span>2026</span>
-                        <span>⭐ 9.0</span>
-                    </div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 9.0</span></div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80" alt="One Last Shot" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80" alt="Movie" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">One Last Shot</div>
-                    <div class="movie-details">
-                        <span>2026</span>
-                        <span>⭐ 7.7</span>
-                    </div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 7.7</span></div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Resident Evil" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Movie" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">Resident Evil</div>
-                    <div class="movie-details">
-                        <span>2026</span>
-                        <span>⭐ 7.3</span>
-                    </div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 7.3</span></div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80" alt="Dark Horizon" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80" alt="Movie" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">Dark Horizon</div>
-                    <div class="movie-details">
-                        <span>2026</span>
-                        <span>⭐ 8.2</span>
-                    </div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 8.2</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم المسلسلات -->
+    <div class="section-container">
+        <div class="section-title">Popular TV Series (مسلسلات شهيرة)</div>
+        <div class="movies-grid">
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=400&q=80" alt="Series" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">The Crown Legacy</div>
+                    <div class="movie-details"><span>2025</span><span>⭐ 8.9</span></div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Series" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Cyber City 2099</div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 8.5</span></div>
                 </div>
             </div>
         </div>
@@ -271,26 +275,20 @@
 
     <!-- قسم الأنمي -->
     <div class="section-container">
-        <div class="section-title">Anime & Animation</div>
+        <div class="section-title">Anime & Animation (الأنمي والرسوم المتحركة)</div>
         <div class="movies-grid">
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="Shadow Hunter" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="Anime" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">Shadow Hunter</div>
-                    <div class="movie-details">
-                        <span>2026</span>
-                        <span>⭐ 9.1</span>
-                    </div>
+                    <div class="movie-details"><span>2026</span><span>⭐ 9.1</span></div>
                 </div>
             </div>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Blade Runner Zero" class="movie-poster">
+                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Anime" class="movie-poster">
                 <div class="movie-info">
                     <div class="movie-title">Blade Runner Zero</div>
-                    <div class="movie-details">
-                        <span>2025</span>
-                        <span>⭐ 8.8</span>
-                    </div>
+                    <div class="movie-details"><span>2025</span><span>⭐ 8.8</span></div>
                 </div>
             </div>
         </div>
