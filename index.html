@@ -3,76 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.hawk - Language Selector</title>
+    <title>M.hawk - Ultimate Entertainment Platform</title>
     <style>
+        :root {
+            --bg-color: #141414;
+            --primary-color: #e50914;
+            --text-color: #ffffff;
+            --gray-color: #b3b3b3;
+            --card-bg: #1f1f1f;
+        }
         body {
-            background-color: #141414;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 40px;
+            padding: 0;
+        }
+        header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-        }
-        .language-container {
-            background: #1f1f1f;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            text-align: center;
-            width: 300px;
-        }
-        .language-container h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #e5e5e5;
-        }
-        /* تنسيق شريط اختيار اللغات */
-        .language-select {
+            padding: 15px 40px;
+            background: rgba(20, 20, 20, 0.95);
+            position: fixed;
+            top: 0;
             width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li a {
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .language-select {
             background-color: #222;
             color: #fff;
             border: 1px solid #444;
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 6px 12px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
-            transition: border-color 0.2s;
         }
-        .language-select:hover, .language-select:focus {
-            border-color: #e50914;
+        .language-select:hover {
+            border-color: var(--primary-color);
+        }
+        .vip-btn {
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            padding: 7px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.2s;
+        }
+        .vip-btn:hover {
+            background-color: #005ea6;
+        }
+        .hero {
+            height: 65vh;
+            background: linear-gradient(to top, var(--bg-color), transparent), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            margin-top: 60px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+        }
+        .hero p {
+            font-size: 15px;
+            max-width: 550px;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .hero-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+        .hero-btn:hover {
+            background-color: #b20710;
+        }
+        .section-container {
+            padding: 20px 40px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #fff;
+            border-right: 4px solid var(--primary-color);
+            padding-right: 10px;
+        }
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .movie-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+        }
+        .movie-poster {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .movie-info {
+            padding: 12px;
+        }
+        .movie-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .movie-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--gray-color);
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="language-container">
-        <h3>اختر لغة العرض</h3>
-        <select class="language-select" id="languageSelect" onchange="changeLanguage()">
-            <option value="ar">العربية (Arabic)</option>
-            <option value="en">English (الإنجليزية)</option>
-            <option value="fr">Français (الفرنسية)</option>
-            <option value="es">Español (الإسبانية)</option>
-            <option value="de">Deutsch (الألمانية)</option>
-            <option value="it">Italiano (الإيطالية)</option>
-            <option value="tr">Türkçe (التركية)</option>
-            <option value="ja">日本語 (اليابانية)</option>
-            <option value="ko">한국어 (الكورية)</option>
-            <option value="ru">Русский (الروسية)</option>
-            <option value="zh">中文 (الصينية)</option>
-            <option value="pt">Português (البرتغالية)</option>
-            <option value="hi">हिन्दी (الهندية)</option>
-            <option value="nl">Nederlands (الهولندية)</option>
-        </select>
+    <!-- شريط التنقل العلوي المتكامل -->
+    <header>
+        <div class="logo">M.HAWK</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">الرئيسية</a></li>
+            <li><a href="#">الأفلام</a></li>
+            <li><a href="#">المسلسلات</a></li>
+            <li><a href="#">الأنمي</a></li>
+            <li><a href="#">الإصدارات الجديدة</a></li>
+        </ul>
+        <div class="header-controls">
+            <!-- شريط الـ 14 لغة -->
+            <select class="language-select" id="languageSelect" onchange="changeLanguage()">
+                <option value="ar">العربية (Arabic)</option>
+                <option value="en">English (الإنجليزية)</option>
+                <option value="fr">Français (الفرنسية)</option>
+                <option value="es">Español (الإسبانية)</option>
+                <option value="de">Deutsch (الألمانية)</option>
+                <option value="it">Italiano (الإيطالية)</option>
+                <option value="tr">Türkçe (التركية)</option>
+                <option value="ja">日本語 (اليابانية)</option>
+                <option value="ko">한국어 (الكورية)</option>
+                <option value="ru">Русский (الروسية)</option>
+                <option value="zh">中文 (الصينية)</option>
+                <option value="pt">Português (البرتغالية)</option>
+                <option value="hi">हिन्दी (الهندية)</option>
+                <option value="nl">Nederlands (الهولندية)</option>
+            </select>
+            <!-- زر باي بال VIP -->
+            <button class="vip-btn" onclick="alert('الانتقال إلى بوابة الدفع عبر PayPal')">
+                <span>PayPal VIP</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- واجهة البطل الرئيسية -->
+    <div class="hero">
+        <h1>The Love Hypothesis</h1>
+        <p>دراما رومانسية واعدة تحكي قصة معقدة مليئة بالمشاعر والمفاجآت غير المتوقعة.</p>
+        <button class="hero-btn">مشاهدة الآن</button>
+    </div>
+
+    <!-- قسم الأفلام الرائجة -->
+    <div class="section-container">
+        <div class="section-title">Trending Movies & Shows</div>
+        <div class="movies-grid">
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80" alt="The Love Hypothesis" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">The Love Hypothesis</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 9.0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80" alt="One Last Shot" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">One Last Shot</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 7.7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Resident Evil" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Resident Evil</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 7.3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=400&q=80" alt="Dark Horizon" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Dark Horizon</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 8.2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم الأنمي -->
+    <div class="section-container">
+        <div class="section-title">Anime & Animation</div>
+        <div class="movies-grid">
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="Shadow Hunter" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Shadow Hunter</div>
+                    <div class="movie-details">
+                        <span>2026</span>
+                        <span>⭐ 9.1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80" alt="Blade Runner Zero" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title">Blade Runner Zero</div>
+                    <div class="movie-details">
+                        <span>2025</span>
+                        <span>⭐ 8.8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         function changeLanguage() {
             var selectedLang = document.getElementById("languageSelect").value;
-            // ضبط اتجاه الصفحة تلقائياً (من اليمين ليسار للعربية، والعكس باقي اللغات)
             if (selectedLang === 'ar') {
                 document.documentElement.setAttribute('dir', 'rtl');
                 document.documentElement.setAttribute('lang', 'ar');
@@ -80,10 +306,7 @@
                 document.documentElement.setAttribute('dir', 'ltr');
                 document.documentElement.setAttribute('lang', selectedLang);
             }
-            // يمكنك إضافة كود حفظ اللغة المختار في LocalStorage هنا مستقبلاً
-            console. تم تغيير اللغة إلى: {selectedLang};
         }
     </script>
-
 </body>
 </html>
